@@ -12,6 +12,7 @@
 		5A0816FD23893A3700EFB833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0816FC23893A3700EFB833 /* Assets.xcassets */; };
 		5A08170023893A3700EFB833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0816FE23893A3700EFB833 /* Main.storyboard */; };
 		5A08170C23893A3700EFB833 /* PushySquaresMapCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08170B23893A3700EFB833 /* PushySquaresMapCreatorTests.swift */; };
+		5A08171923893CC800EFB833 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08171823893CC800EFB833 /* Array2D.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		5A08170723893A3700EFB833 /* PushySquaresMapCreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushySquaresMapCreatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A08170B23893A3700EFB833 /* PushySquaresMapCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushySquaresMapCreatorTests.swift; sourceTree = "<group>"; };
 		5A08170D23893A3700EFB833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A08171823893CC800EFB833 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				5A0816F823893A3200EFB833 /* AppDelegate.swift */,
 				5A0816FA23893A3200EFB833 /* ViewController.swift */,
+				5A08171823893CC800EFB833 /* Array2D.swift */,
 				5A0816FC23893A3700EFB833 /* Assets.xcassets */,
 				5A0816FE23893A3700EFB833 /* Main.storyboard */,
 				5A08170123893A3700EFB833 /* Info.plist */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0816FB23893A3200EFB833 /* ViewController.swift in Sources */,
+				5A08171923893CC800EFB833 /* Array2D.swift in Sources */,
 				5A0816F923893A3200EFB833 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
