@@ -34,3 +34,10 @@ extension NSView {
     }
 }
 
+extension BinaryFloatingPoint {
+    var f : CGFloat { CGFloat(self) }
+}
+
+extension BinaryInteger {
+    var f : CGFloat { CGFloat(self) }
+}
