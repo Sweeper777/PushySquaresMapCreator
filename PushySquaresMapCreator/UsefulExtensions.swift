@@ -12,3 +12,25 @@ extension CGRect {
     }
 }
 
+extension NSView {
+    var x: CGFloat {
+        get { frame.x }
+        set { frame.x = newValue }
+    }
+    
+    var y: CGFloat {
+        get { frame.y }
+        set { frame.y = newValue }
+    }
+    
+    var width: CGFloat {
+        get { frame.width }
+        set { frame = CGRect(x: x, y: y, width: newValue, height: height) }
+    }
+    
+    var height: CGFloat {
+        get { frame.height }
+        set { frame = CGRect(x: x, y: y, width: width, height: newValue) }
+    }
+}
+
