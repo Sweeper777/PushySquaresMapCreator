@@ -18,6 +18,18 @@ class GameBoardView : NSView {
         let fillPath = NSBezierPath(rect: fillPathRect)
         color.setFill()
         fillPath.fill()
+        let shadowPath = NSBezierPath()
+        let strokeWidth = squareViewLength / 8
+        shadowPath.move(to: CGPoint(
+            x: fillPathRect.x + squareViewLength - strokeWidth / 2,
+            y: fillPathRect.y))
+        shadowPath.line(to: CGPoint(
+            x: fillPathRect.x + squareViewLength - strokeWidth / 2,
+            y: fillPathRect.y + squareViewLength - strokeWidth / 2))
+        shadowPath.line(to: CGPoint(x: fillPathRect.x, y: fillPathRect.y + squareViewLength - strokeWidth / 2))
+        color.shadow(withLevel: 0.3)!.setStroke()
+        shadowPath.lineWidth = strokeWidth
+        shadowPath.stroke()
     }
     
     private func point(for position: Position) -> CGPoint {
