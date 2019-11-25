@@ -27,6 +27,26 @@ class GameBoardView : NSView {
                 }
             }
         }
+        
+        for x in 0..<board.columns {
+            for y in 0..<board.rows {
+                if [Tile.spawn1, .spawn2, .spawn3, .spawn4].contains(board[x, y]) {
+                    if board[x, y] == .spawn1 {
+                        NSColor.red.setStroke()
+                    } else if board[x, y] == .spawn2 {
+                        NSColor.blue.setStroke()
+                    } else if board[x, y] == .spawn3 {
+                        NSColor.green.setStroke()
+                    } else if board[x, y] == .spawn4 {
+                        NSColor.yellow.setStroke()
+                    }
+                    let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+                    path.lineWidth = strokeWidth
+                    path.stroke()
+                }
+            }
+        }
+        
     }
     
     func addSquareView(at position: Position, color: NSColor) {
