@@ -13,6 +13,12 @@ class GameBoardView : NSView {
     
     let borderSize: CGFloat = 8
     
+    func addSquareView(at position: Position, color: NSColor) {
+        let fillPathRect = CGRect(origin: squareViewPoint(for: position), size: CGSize(width: squareViewLength, height: squareViewLength))
+        let fillPath = NSBezierPath(rect: fillPathRect)
+        color.setFill()
+        fillPath.fill()
+    }
     
     private func point(for position: Position) -> CGPoint {
         return CGPoint(x: strokeWidth / 2 + position.x.f * squareLength, y: strokeWidth / 2 + position.y.f * squareLength)
