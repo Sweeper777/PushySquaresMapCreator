@@ -13,6 +13,22 @@ class GameBoardView : NSView {
     
     let borderSize: CGFloat = 8
     
+    override func draw(_ dirtyRect: NSRect) {
+        guard board != nil else { return }
+        for x in 0..<board.columns {
+            for y in 0..<board.rows {
+                if board[x, y] != .void {
+                    let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+                    NSColor.black.setStroke()
+                    NSColor(red: 1, green: 0.953125, blue: 0.828125, alpha: 1).setFill()
+                    path.lineWidth = strokeWidth
+                    path.fill()
+                    path.stroke()
+                }
+            }
+        }
+    }
+    
     func addSquareView(at position: Position, color: NSColor) {
         let fillPathRect = CGRect(origin: squareViewPoint(for: position), size: CGSize(width: squareViewLength, height: squareViewLength))
         let fillPath = NSBezierPath(rect: fillPathRect)
