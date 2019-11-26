@@ -20,6 +20,11 @@ class ViewController: NSViewController {
         board[8, 8] = .spawn3
         board[8, 1] = .spawn4
 
+        board[4, 4] = .wall
+        board[4, 5] = .wall
+        board[5, 5] = .wall
+        board[5, 4] = .wall
+
 
         gameBoardView.board = board
         
