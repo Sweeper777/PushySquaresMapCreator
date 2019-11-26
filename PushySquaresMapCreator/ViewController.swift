@@ -15,6 +15,14 @@ class ViewController: NSViewController {
             }
         }
 
+        board[1, 1] = .spawn1
+        board[1, 8] = .spawn2
+        board[8, 8] = .spawn3
+        board[8, 1] = .spawn4
+
+
+        gameBoardView.board = board
+        
     }
 
 
