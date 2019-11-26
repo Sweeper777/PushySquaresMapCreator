@@ -47,6 +47,19 @@ class GameBoardView : NSView {
             }
         }
         
+        for x in 0..<board.columns {
+            for y in 0..<board.rows {
+                if board[x, y] == .wall {
+                    addSquareView(at: Position(x, y), color: .white)
+                } else if board[x, y] == .grey {
+                    addSquareView(at: Position(x, y), color: .gray)
+                } else if board[x, y] == .slippery {
+                    NSImage(named: "wet")?.draw(in: CGRect(
+                        origin: point(for: Position(x, y)),
+                        size: CGSize(width: squareLength, height: squareLength)))
+                }
+            }
+        }
     }
     
     func addSquareView(at position: Position, color: NSColor) {
