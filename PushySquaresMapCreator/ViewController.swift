@@ -25,6 +25,8 @@ class ViewController: NSViewController {
         board[5, 5] = .wall
         board[5, 4] = .wall
 
+        board[1, 2] = .slippery
+        board[1, 3] = .grey
 
         gameBoardView.board = board
         
