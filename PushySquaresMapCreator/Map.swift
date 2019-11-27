@@ -18,4 +18,14 @@ extension Array2D where T == Tile {
         }
     }
     
+    var stringRepresentation: String {
+        var result = ""
+        for x in 0..<columns {
+            for y in 0..<rows {
+                result += "\(self[x, y].rawValue)"
+            }
+            result += "\n"
+        }
+        return result
+    }
 }
