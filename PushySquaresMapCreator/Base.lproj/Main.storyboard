@@ -733,11 +733,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="GPT-yQ-ata">
                                     <font key="font" size="13" name="Monaco"/>
-                                    <string key="title">.........
-.+++++++.</string>
+                                    <string key="title">....OO....
+.1++++++2.
+.++++++++.
+.++++++++.
+O+++OO+++O
+O+++OO+++O
+.++++++++.
+.++++++++.
+.4++++++3.
+....OO....</string>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="jht-D0-aW5"/>
+                                </connections>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQy-dj-qDK" customClass="GameBoardView" customModule="PushySquaresMapCreator" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="349" height="349"/>
@@ -746,6 +757,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="gameBoardTextField" destination="dxd-hv-lVW" id="9zk-Wg-a1m"/>
                         <outlet property="gameBoardView" destination="sQy-dj-qDK" id="k6e-Vz-kOY"/>
                     </connections>
                 </viewController>
