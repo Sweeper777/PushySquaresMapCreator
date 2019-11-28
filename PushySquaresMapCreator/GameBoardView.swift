@@ -1,6 +1,9 @@
 import AppKit
 
 class GameBoardView : NSView {
+    
+    weak var delegate: GameBoardViewDelegate?
+    
     override var isFlipped: Bool {
         true
     }
