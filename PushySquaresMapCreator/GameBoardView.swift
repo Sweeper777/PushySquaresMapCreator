@@ -110,6 +110,11 @@ class GameBoardView : NSView {
 // MARK: Mouse events handling
 
 extension GameBoardView {
+    
+    func convertWindowCoordinateToViewCoordinate(_ windowCoordinate: CGPoint) -> CGPoint {
+        return convert(windowCoordinate, from: self.window?.contentView)
+    }
+    
     func convertMouseCoordinateToPosition(_ mouseCoordinate: CGPoint) -> Position {
         return Position(
             Int((mouseCoordinate.x - strokeWidth) / squareLength),
