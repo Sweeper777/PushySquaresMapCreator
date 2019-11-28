@@ -8,6 +8,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gameBoardView.board = Map(fromString: gameBoardTextField.stringValue)
     }
 
 
