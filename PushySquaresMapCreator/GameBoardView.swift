@@ -106,3 +106,14 @@ class GameBoardView : NSView {
         return CGPoint(x: pointForPosition.x + offset, y: pointForPosition.y + offset)
     }
 }
+
+// MARK: Mouse events handling
+
+extension GameBoardView {
+    func convertMouseCoordinateToPosition(_ mouseCoordinate: CGPoint) -> Position {
+        return Position(
+            Int((mouseCoordinate.x - strokeWidth) / squareLength),
+            Int((mouseCoordinate.y - strokeWidth) / squareLength)
+        )
+    }
+}
