@@ -118,6 +118,14 @@ extension GameBoardView {
         )
     }
     
+    override func mouseDragged(with event: NSEvent) {
+        delegate?.mouseMove(to:
+            convertMouseCoordinateToPosition(
+                convertWindowCoordinateToViewCoordinate(event.locationInWindow)
+            )
+        )
+    }
+    
     
     func convertWindowCoordinateToViewCoordinate(_ windowCoordinate: CGPoint) -> CGPoint {
         return convert(windowCoordinate, from: self.window?.contentView)
