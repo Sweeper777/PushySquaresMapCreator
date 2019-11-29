@@ -53,9 +53,9 @@ class GameBoardView : NSView {
         for x in 0..<board.columns {
             for y in 0..<board.rows {
                 if board[x, y] == .wall {
-                    addSquareView(at: Position(x, y), color: .white)
+                    drawInnerSquare(at: Position(x, y), color: .white)
                 } else if board[x, y] == .grey {
-                    addSquareView(at: Position(x, y), color: .gray)
+                    drawInnerSquare(at: Position(x, y), color: .gray)
                 } else if board[x, y] == .slippery {
                     NSImage(named: "wet")?.draw(in: CGRect(
                         origin: point(for: Position(x, y)),
@@ -65,20 +65,20 @@ class GameBoardView : NSView {
         }
     }
     
-    func addSquareView(at position: Position, color: NSColor) {
-        let fillPathRect = CGRect(origin: squareViewPoint(for: position), size: CGSize(width: squareViewLength, height: squareViewLength))
+    func drawInnerSquare(at position: Position, color: NSColor) {
+        let fillPathRect = CGRect(origin: innerSquarePoint(for: position), size: CGSize(width: innerSquareLength, height: innerSquareLength))
         let fillPath = NSBezierPath(rect: fillPathRect)
         color.setFill()
         fillPath.fill()
         let shadowPath = NSBezierPath()
-        let strokeWidth = squareViewLength / 8
+        let strokeWidth = innerSquareLength / 8
         shadowPath.move(to: CGPoint(
-            x: fillPathRect.x + squareViewLength - strokeWidth / 2,
+            x: fillPathRect.x + innerSquareLength - strokeWidth / 2,
             y: fillPathRect.y))
         shadowPath.line(to: CGPoint(
-            x: fillPathRect.x + squareViewLength - strokeWidth / 2,
-            y: fillPathRect.y + squareViewLength - strokeWidth / 2))
-        shadowPath.line(to: CGPoint(x: fillPathRect.x, y: fillPathRect.y + squareViewLength - strokeWidth / 2))
+            x: fillPathRect.x + innerSquareLength - strokeWidth / 2,
+            y: fillPathRect.y + innerSquareLength - strokeWidth / 2))
+        shadowPath.line(to: CGPoint(x: fillPathRect.x, y: fillPathRect.y + innerSquareLength - strokeWidth / 2))
         color.shadow(withLevel: 0.3)!.setStroke()
         shadowPath.lineWidth = strokeWidth
         shadowPath.stroke()
@@ -92,7 +92,7 @@ class GameBoardView : NSView {
         return (borderSize * self.width) / (borderSize * max(board.columns.f, board.rows.f) + 1.0)
     }
     
-    private var squareViewLength: CGFloat {
+    private var innerSquareLength: CGFloat {
         return squareLength - (squareLength / borderSize)
     }
     
@@ -100,7 +100,7 @@ class GameBoardView : NSView {
         return squareLength / borderSize
     }
     
-    func squareViewPoint(for position: Position) -> CGPoint {
+    func innerSquarePoint(for position: Position) -> CGPoint {
         let pointForPosition = point(for: position)
         let offset = squareLength / borderSize / 2
         return CGPoint(x: pointForPosition.x + offset, y: pointForPosition.y + offset)
