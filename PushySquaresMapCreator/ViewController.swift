@@ -9,6 +9,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         gameBoardView.board = Map(fromString: gameBoardTextField.stringValue)
+        gameBoardView.delegate = self
     }
 
 
@@ -22,3 +23,12 @@ extension ViewController : NSTextFieldDelegate {
     }
 }
 
+extension ViewController : GameBoardViewDelegate {
+    func mouseMove(to position: Position) {
+        gameBoardView.board[position] = .empty
+    }
+    
+    func mouseUp(at position: Position) {
+        gameBoardView.board[position] = .empty
+    }
+}
