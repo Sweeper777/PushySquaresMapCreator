@@ -18,6 +18,18 @@ class GameBoardView : NSView {
     
     override func draw(_ dirtyRect: NSRect) {
         guard board != nil else { return }
+        
+        for x in 0..<board.columns {
+            for y in 0..<board.rows {
+                if board[x, y] == .void {
+                    let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+                    NSColor.textColor.setStroke()
+                    path.lineWidth = 0.5
+                    path.stroke()
+                }
+            }
+        }
+        
         for x in 0..<board.columns {
             for y in 0..<board.rows {
                 if board[x, y] != .void {
