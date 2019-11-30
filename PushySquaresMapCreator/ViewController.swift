@@ -3,12 +3,12 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet var gameBoardView: GameBoardView!
-    @IBOutlet var gameBoardTextField: NSTextField!
+    @IBOutlet var gameBoardTextView: NSTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gameBoardView.board = Map(fromString: gameBoardTextField.stringValue)
+        gameBoardView.board = Map(fromString: gameBoardTextView.string)
         gameBoardView.delegate = self
     }
 
