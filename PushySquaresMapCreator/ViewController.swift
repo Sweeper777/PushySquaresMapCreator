@@ -15,9 +15,9 @@ class ViewController: NSViewController {
 
 }
 
-extension ViewController : NSTextFieldDelegate {
-    func controlTextDidChange(_ obj: Notification) {
-        if let map = Map(fromString: gameBoardTextField.stringValue) {
+extension ViewController : NSTextViewDelegate {
+    func textDidChange(_ notification: Notification) {
+        if let map = Map(fromString: gameBoardTextView.string) {
             gameBoardView.board = map
         }
     }
