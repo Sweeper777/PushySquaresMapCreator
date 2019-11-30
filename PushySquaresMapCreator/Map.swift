@@ -28,4 +28,14 @@ extension Array2D where T == Tile {
         }
         return result
     }
+    
+    func enumerateTiles(where predicate: (Tile) -> Bool, block: (Int, Int, Tile) -> Void) {
+        for x in 0..<columns {
+            for y in 0..<rows {
+                if predicate(self[x, y]) {
+                    block(x, y, self[x, y])
+                }
+            }
+        }
+    }
 }
