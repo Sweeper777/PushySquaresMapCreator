@@ -728,12 +728,27 @@
                                     </segments>
                                 </segmentedCell>
                             </segmentedControl>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-hv-lVW">
-                                <rect key="frame" x="377" y="61" width="198" height="349"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQy-dj-qDK" customClass="GameBoardView" customModule="PushySquaresMapCreator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="61" width="349" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="GPT-yQ-ata">
-                                    <font key="font" size="13" name="Monaco"/>
-                                    <string key="title">....OO....
+                            </customView>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOG-zT-usQ">
+                                <rect key="frame" x="377" y="61" width="206" height="349"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="nle-Vj-7lg">
+                                    <rect key="frame" x="0.0" y="0.0" width="206" height="349"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" textCompletion="NO" id="gFg-Dx-Sb5">
+                                            <rect key="frame" x="0.0" y="0.0" width="206" height="349"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="206" height="349"/>
+                                            <size key="maxSize" width="240" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment>
+                                                    <string key="content">....OO....
 .1++++++2.
 .++++++++.
 .++++++++.
@@ -743,27 +758,39 @@ O+++OO+++O
 .++++++++.
 .4++++++3.
 ....OO....</string>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="jht-D0-aW5"/>
-                                </connections>
-                            </textField>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQy-dj-qDK" customClass="GameBoardView" customModule="PushySquaresMapCreator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="61" width="349" height="349"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="20" name="Monaco"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="8Es-TA-dLl"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="f6r-Hw-tJv">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="TpZ-ZW-x0X">
+                                    <rect key="frame" x="190" y="0.0" width="16" height="349"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="gameBoardTextField" destination="dxd-hv-lVW" id="9zk-Wg-a1m"/>
+                        <outlet property="gameBoardTextView" destination="gFg-Dx-Sb5" id="eoK-Nh-rfg"/>
                         <outlet property="gameBoardView" destination="sQy-dj-qDK" id="k6e-Vz-kOY"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="774"/>
+            <point key="canvasLocation" x="75.5" y="773.5"/>
         </scene>
     </scenes>
 </document>
