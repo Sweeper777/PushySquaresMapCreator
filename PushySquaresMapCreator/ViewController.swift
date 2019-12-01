@@ -31,4 +31,8 @@ extension ViewController : GameBoardViewDelegate {
     func mouseUp(at position: Position) {
         gameBoardView.board[position] = .empty
     }
+    
+    func boardDidUpdate() {
+        gameBoardTextView.string = gameBoardView.board.stringRepresentation
+    }
 }
