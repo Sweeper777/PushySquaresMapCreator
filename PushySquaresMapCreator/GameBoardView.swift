@@ -11,6 +11,7 @@ class GameBoardView : NSView {
     var board: Array2D<Tile>! {
         didSet {
             setNeedsDisplay(self.bounds)
+            delegate?.boardDidUpdate()
         }
     }
     
