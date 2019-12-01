@@ -19,60 +19,46 @@ class GameBoardView : NSView {
     override func draw(_ dirtyRect: NSRect) {
         guard board != nil else { return }
         
-        for x in 0..<board.columns {
-            for y in 0..<board.rows {
-                if board[x, y] == .void {
-                    let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
-                    NSColor.textColor.setStroke()
-                    path.lineWidth = 0.5
-                    path.stroke()
-                }
-            }
+        board.enumerateTiles(where: { $0 == .void}) { x, y, _ in
+            let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+            NSColor.textColor.setStroke()
+            path.lineWidth = 0.5
+            path.stroke()
         }
         
-        for x in 0..<board.columns {
-            for y in 0..<board.rows {
-                if board[x, y] != .void {
-                    let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
-                    NSColor.black.setStroke()
-                    NSColor(red: 1, green: 0.953125, blue: 0.828125, alpha: 1).setFill()
-                    path.lineWidth = strokeWidth
-                    path.fill()
-                    path.stroke()
-                }
-            }
+        board.enumerateTiles(where: { $0 != .void}) { x, y, _ in
+            let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+            NSColor.black.setStroke()
+            NSColor(red: 1, green: 0.953125, blue: 0.828125, alpha: 1).setFill()
+            path.lineWidth = strokeWidth
+            path.fill()
+            path.stroke()
         }
         
-        for x in 0..<board.columns {
-            for y in 0..<board.rows {
-                if [Tile.spawn1, .spawn2, .spawn3, .spawn4].contains(board[x, y]) {
-                    if board[x, y] == .spawn1 {
-                        NSColor.red.setStroke()
-                    } else if board[x, y] == .spawn2 {
-                        NSColor.blue.setStroke()
-                    } else if board[x, y] == .spawn3 {
-                        NSColor.green.setStroke()
-                    } else if board[x, y] == .spawn4 {
-                        NSColor.yellow.setStroke()
-                    }
-                    let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
-                    path.lineWidth = strokeWidth
-                    path.stroke()
-                }
+        board.enumerateTiles(where: [Tile.spawn1, .spawn2, .spawn3, .spawn4].contains) { x, y, tile in
+            if tile == .spawn1 {
+                NSColor.red.setStroke()
+            } else if tile == .spawn2 {
+                NSColor.blue.setStroke()
+            } else if tile == .spawn3 {
+                NSColor.green.setStroke()
+            } else if tile == .spawn4 {
+                NSColor.yellow.setStroke()
             }
+            let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+            path.lineWidth = strokeWidth
+            path.stroke()
         }
         
-        for x in 0..<board.columns {
-            for y in 0..<board.rows {
-                if board[x, y] == .wall {
-                    drawInnerSquare(at: Position(x, y), color: .white)
-                } else if board[x, y] == .grey {
-                    drawInnerSquare(at: Position(x, y), color: .gray)
-                } else if board[x, y] == .slippery {
-                    NSImage(named: "wet")?.draw(in: CGRect(
-                        origin: point(for: Position(x, y)),
-                        size: CGSize(width: squareLength, height: squareLength)))
-                }
+        board.enumerateTiles(where: { _ in true }) { x, y, tile in
+            if tile == .wall {
+                drawInnerSquare(at: Position(x, y), color: .white)
+            } else if tile == .grey {
+                drawInnerSquare(at: Position(x, y), color: .gray)
+            } else if tile == .slippery {
+                NSImage(named: "wet")?.draw(in: CGRect(
+                    origin: point(for: Position(x, y)),
+                    size: CGSize(width: squareLength, height: squareLength)))
             }
         }
     }
