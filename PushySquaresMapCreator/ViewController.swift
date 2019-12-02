@@ -6,6 +6,9 @@ class ViewController: NSViewController {
     @IBOutlet var gameBoardTextView: NSTextView!
     @IBOutlet var tileSegmentedControl: NSSegmentedControl!
     
+    let segmentedControlTilesOrder: [Tile] = [
+        .void, .empty, .wall, .grey, .slippery, .spawn1, .spawn2, .spawn3, .spawn4,
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
