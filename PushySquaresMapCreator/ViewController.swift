@@ -36,7 +36,7 @@ extension ViewController : GameBoardViewDelegate {
     }
     
     func mouseUp(at position: Position) {
-        gameBoardView.board[position] = .empty
+        gameBoardView.board[position] = segmentedControlTilesOrder[tileSegmentedControl.selectedSegment]
     }
     
     func boardDidUpdate() {
