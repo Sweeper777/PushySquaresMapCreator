@@ -4,6 +4,8 @@ class ViewController: NSViewController {
 
     @IBOutlet var gameBoardView: GameBoardView!
     @IBOutlet var gameBoardTextView: NSTextView!
+    @IBOutlet var tileSegmentedControl: NSSegmentedControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
