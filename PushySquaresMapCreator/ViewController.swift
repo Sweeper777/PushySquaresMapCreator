@@ -43,3 +43,11 @@ extension ViewController : GameBoardViewDelegate {
         gameBoardTextView.string = gameBoardView.board.stringRepresentation
     }
 }
+
+// MARK: Menu Items
+
+extension ViewController {
+    @objc @IBAction func clearToVoid(_ sender: Any) {
+        gameBoardView.board = Map(columns: gameBoardView.board.columns, rows: gameBoardView.board.rows, initialValue: .void)
+    }
+}
