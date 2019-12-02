@@ -30,7 +30,9 @@ extension ViewController : NSTextViewDelegate {
 
 extension ViewController : GameBoardViewDelegate {
     func mouseMove(to position: Position) {
-        gameBoardView.board[position] = .empty
+        if tileSegmentedControl.selectedSegment < 5 {
+            gameBoardView.board[position] = segmentedControlTilesOrder[tileSegmentedControl.selectedSegment]
+        }
     }
     
     func mouseUp(at position: Position) {
