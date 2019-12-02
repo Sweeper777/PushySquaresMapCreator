@@ -110,27 +110,21 @@ class GameBoardView : NSView {
 
 extension GameBoardView {
     override func mouseUp(with event: NSEvent) {
-        delegate?.mouseUp(at:
-            convertMouseCoordinateToPosition(
-                convertWindowCoordinateToViewCoordinate(event.locationInWindow)
-            )
-        )
+        let locationInSelf = convertWindowCoordinateToViewCoordinate(event.locationInWindow)
+        guard bounds.contains(locationInSelf) else { return }
+        delegate?.mouseUp(at: convertMouseCoordinateToPosition(locationInSelf))
     }
     
     override func mouseDragged(with event: NSEvent) {
-        delegate?.mouseMove(to:
-            convertMouseCoordinateToPosition(
-                convertWindowCoordinateToViewCoordinate(event.locationInWindow)
-            )
-        )
+        let locationInSelf = convertWindowCoordinateToViewCoordinate(event.locationInWindow)
+        guard bounds.contains(locationInSelf) else { return }
+        delegate?.mouseMove(to: convertMouseCoordinateToPosition(locationInSelf))
     }
     
     override func mouseDown(with event: NSEvent) {
-        delegate?.mouseMove(to:
-            convertMouseCoordinateToPosition(
-                convertWindowCoordinateToViewCoordinate(event.locationInWindow)
-            )
-        )
+        let locationInSelf = convertWindowCoordinateToViewCoordinate(event.locationInWindow)
+        guard bounds.contains(locationInSelf) else { return }
+        delegate?.mouseMove(to: convertMouseCoordinateToPosition(locationInSelf))
     }
     
     func convertWindowCoordinateToViewCoordinate(_ windowCoordinate: CGPoint) -> CGPoint {
