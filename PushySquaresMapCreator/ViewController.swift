@@ -81,6 +81,15 @@ extension ViewController {
                 let enteredString = inputTextField.stringValue
                 guard let size = Int(enteredString) else { return }
                 self?.gameBoardView.board = Map(columns: size, rows: size, initialValue: .void)
+    }
+    
+    @objc @IBAction func saveAsMap(_ sender: Any) {
+        let saveFileDialog = NSSavePanel()
+        saveFileDialog.allowedFileTypes = ["map"]
+        saveFileDialog.allowsOtherFileTypes = true
+        saveFileDialog.canCreateDirectories = true
+        saveFileDialog.nameFieldStringValue = "untitled.map"
+        
             }
         }
     }
