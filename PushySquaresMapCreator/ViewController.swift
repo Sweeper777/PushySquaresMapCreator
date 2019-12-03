@@ -81,6 +81,18 @@ extension ViewController {
                 let enteredString = inputTextField.stringValue
                 guard let size = Int(enteredString) else { return }
                 self?.gameBoardView.board = Map(columns: size, rows: size, initialValue: .void)
+            }
+        }
+    }
+    
+    @objc @IBAction func openMap(_ sender: Any) {
+        let openFileDialog = NSOpenPanel()
+        openFileDialog.allowsMultipleSelection = false
+        openFileDialog.canChooseDirectories = false
+        openFileDialog.canChooseFiles = true
+        openFileDialog.allowedFileTypes = ["map"]
+        openFileDialog.allowsOtherFileTypes = false
+        
     }
     
     @objc @IBAction func saveAsMap(_ sender: Any) {
