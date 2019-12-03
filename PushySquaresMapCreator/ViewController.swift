@@ -90,6 +90,17 @@ extension ViewController {
         saveFileDialog.canCreateDirectories = true
         saveFileDialog.nameFieldStringValue = "untitled.map"
         
+        if saveFileDialog.runModal() == .OK {
+            let stringRepresentation = gameBoardView.board.stringRepresentation
+            guard let url = saveFileDialog.url else {
+                print("no url in NSSavePanel")
+                return
+            }
+            do {
+                try stringRepresentation.write(to: url, atomically: false, encoding: .utf8)
+            } catch let error {
+                print("error occurred while writing file")
+                print(error)
             }
         }
     }
