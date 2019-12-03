@@ -76,6 +76,13 @@ extension ViewController {
         inputTextField.placeholderString = "10"
         a.accessoryView = inputTextField
 
+        a.beginSheetModal(for: view.window!) { [weak self] modalResponse in
+            if modalResponse == .alertFirstButtonReturn {
+                let enteredString = inputTextField.stringValue
+                guard let size = Int(enteredString) else { return }
+                self?.gameBoardView.board = Map(columns: size, rows: size, initialValue: .void)
+            }
+        }
     }
     
     override func responds(to aSelector: Selector!) -> Bool {
