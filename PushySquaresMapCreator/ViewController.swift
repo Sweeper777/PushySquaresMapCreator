@@ -65,4 +65,13 @@ extension ViewController {
         }
         gameBoardView.board = map
     }
+    
+    override func responds(to aSelector: Selector!) -> Bool {
+        if aSelector == #selector(clearToEmpty) {
+            guard let map = gameBoardView.board else { return false }
+            return map.columns > 2 && map.rows > 2
+        }
+        
+        return super.responds(to: aSelector)
+    }
 }
