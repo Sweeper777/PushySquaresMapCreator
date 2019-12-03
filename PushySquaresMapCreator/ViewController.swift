@@ -50,4 +50,19 @@ extension ViewController {
     @objc @IBAction func clearToVoid(_ sender: Any) {
         gameBoardView.board = Map(columns: gameBoardView.board.columns, rows: gameBoardView.board.rows, initialValue: .void)
     }
+    
+    @objc @IBAction func clearToEmpty(_ sender: Any) {
+        var map = gameBoardView.board!
+        guard map.columns > 2 && map.rows > 2 else { return }
+        for column in 0..<map.columns {
+            for row in 0..<map.rows {
+                if (1..<(map.columns - 1)).contains(column) && (1..<(map.rows - 1)).contains(row) {
+                    map[column, row] = .empty
+                } else {
+                    map[column, row] = .void
+                }
+            }
+        }
+        gameBoardView.board = map
+    }
 }
