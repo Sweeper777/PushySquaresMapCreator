@@ -93,6 +93,25 @@ extension ViewController {
         openFileDialog.allowedFileTypes = ["map"]
         openFileDialog.allowsOtherFileTypes = false
         
+        if openFileDialog.runModal() == .OK {
+            guard let url = openFileDialog.url else {
+                print("no file selected!")
+                return
+            }
+            do {
+                let stringRepresentation = try String(contentsOfFile: url.path)
+
+                guard let map = Map(fromString: stringRepresentation) else {
+                    print("invalid map")
+                    return
+                }
+                self.gameBoardView.board = map
+            } catch let error {
+                print("error occurred while reading file")
+                print(error)
+                return
+            }
+        }
     }
     
     @objc @IBAction func saveAsMap(_ sender: Any) {
