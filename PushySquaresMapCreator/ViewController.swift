@@ -15,6 +15,8 @@ class ViewController: NSViewController {
         
         gameBoardView.board = Map(fromString: gameBoardTextView.string)
         gameBoardView.delegate = self
+        
+        preferredContentSize = CGSize(width: 577, height: 441)
     }
 
 
