@@ -34,11 +34,13 @@ extension ViewController : GameBoardViewDelegate {
     func mouseMove(to position: Position) {
         if tileSegmentedControl.selectedSegment < 5 {
             gameBoardView.board[position] = segmentedControlTilesOrder[tileSegmentedControl.selectedSegment]
+            updateTextView()
         }
     }
     
     func mouseUp(at position: Position) {
         gameBoardView.board[position] = segmentedControlTilesOrder[tileSegmentedControl.selectedSegment]
+        updateTextView()
     }
     
     func updateTextView() {
@@ -51,6 +53,7 @@ extension ViewController : GameBoardViewDelegate {
 extension ViewController {
     @objc @IBAction func clearToVoid(_ sender: Any) {
         gameBoardView.board = Map(columns: gameBoardView.board.columns, rows: gameBoardView.board.rows, initialValue: .void)
+        updateTextView()
     }
     
     @objc @IBAction func clearToEmpty(_ sender: Any) {
@@ -66,6 +69,7 @@ extension ViewController {
             }
         }
         gameBoardView.board = map
+        updateTextView()
     }
     
     @objc @IBAction func newBlankMap(_ sender: Any) {
@@ -83,6 +87,7 @@ extension ViewController {
                 let enteredString = inputTextField.stringValue
                 guard let size = Int(enteredString) else { return }
                 self?.gameBoardView.board = Map(columns: size, rows: size, initialValue: .void)
+                self?.updateTextView()
             }
         }
     }
@@ -108,6 +113,7 @@ extension ViewController {
                     return
                 }
                 self.gameBoardView.board = map
+                self.updateTextView()
             } catch let error {
                 print("error occurred while reading file")
                 print(error)
