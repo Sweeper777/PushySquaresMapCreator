@@ -41,7 +41,7 @@ extension ViewController : GameBoardViewDelegate {
         gameBoardView.board[position] = segmentedControlTilesOrder[tileSegmentedControl.selectedSegment]
     }
     
-    func boardDidUpdate() {
+    func updateTextView() {
         gameBoardTextView.string = gameBoardView.board.stringRepresentation
     }
 }
