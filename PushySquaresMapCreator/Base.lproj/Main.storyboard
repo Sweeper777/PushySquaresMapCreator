@@ -359,44 +359,26 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="PushySquaresMapCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="648" height="441"/>
+                        <rect key="frame" x="0.0" y="0.0" width="577" height="441"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHZ-mZ-vkX">
-                                <rect key="frame" x="18" y="18" width="612" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="yaG-vp-suu">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="Void"/>
-                                        <segment label="Empty" selected="YES" tag="1"/>
-                                        <segment label="Wall" width="54"/>
-                                        <segment label="Grey"/>
-                                        <segment label="Slippery"/>
-                                        <segment label="Spawn 1"/>
-                                        <segment label="Spawn 2"/>
-                                        <segment label="Spawn 3"/>
-                                        <segment label="Spawn 4"/>
-                                    </segments>
-                                </segmentedCell>
-                            </segmentedControl>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQy-dj-qDK" customClass="GameBoardView" customModule="PushySquaresMapCreator" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="349" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
                             <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOG-zT-usQ">
-                                <rect key="frame" x="377" y="61" width="251" height="349"/>
+                                <rect key="frame" x="377" y="61" width="180" height="349"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="nle-Vj-7lg">
-                                    <rect key="frame" x="0.0" y="0.0" width="251" height="349"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="349"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" textCompletion="NO" id="gFg-Dx-Sb5">
-                                            <rect key="frame" x="0.0" y="0.0" width="251" height="349"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="251" height="349"/>
+                                            <size key="minSize" width="180" height="349"/>
                                             <size key="maxSize" width="251" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
@@ -429,10 +411,28 @@ O+++OO+++O
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="TpZ-ZW-x0X">
-                                    <rect key="frame" x="235" y="0.0" width="16" height="349"/>
+                                    <rect key="frame" x="164" y="0.0" width="16" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHZ-mZ-vkX">
+                                <rect key="frame" x="11" y="18" width="554" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="yaG-vp-suu">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment image="void" width="60"/>
+                                        <segment image="empty" width="60" selected="YES" tag="1"/>
+                                        <segment image="wall" width="60"/>
+                                        <segment image="grey" width="60"/>
+                                        <segment image="wet-icon" width="60"/>
+                                        <segment image="spawn1" width="60"/>
+                                        <segment image="spawn2" width="60"/>
+                                        <segment image="spawn3" width="60"/>
+                                        <segment image="spawn4" width="60"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                     </view>
                     <connections>
@@ -443,7 +443,18 @@ O+++OO+++O
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="771"/>
+            <point key="canvasLocation" x="39.5" y="770.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="empty" width="19" height="19"/>
+        <image name="grey" width="19" height="19"/>
+        <image name="spawn1" width="19" height="19"/>
+        <image name="spawn2" width="19" height="19"/>
+        <image name="spawn3" width="19" height="19"/>
+        <image name="spawn4" width="19" height="19"/>
+        <image name="void" width="19" height="19"/>
+        <image name="wall" width="19" height="19"/>
+        <image name="wet-icon" width="19" height="19"/>
+    </resources>
 </document>
