@@ -1,6 +1,6 @@
 import Cocoa
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
 
     @IBOutlet var gameBoardView: GameBoardView!
     @IBOutlet var gameBoardTextView: NSTextView!
@@ -22,7 +22,7 @@ class ViewController: NSViewController {
 
 }
 
-extension ViewController : NSTextViewDelegate {
+extension MainViewController : NSTextViewDelegate {
     func textDidChange(_ notification: Notification) {
         if let map = Map(fromString: gameBoardTextView.string) {
             gameBoardView.board = map
@@ -30,7 +30,7 @@ extension ViewController : NSTextViewDelegate {
     }
 }
 
-extension ViewController : GameBoardViewDelegate {
+extension MainViewController : GameBoardViewDelegate {
     func mouseMove(to position: Position) {
         if tileSegmentedControl.selectedSegment < 5 {
             gameBoardView.board[position] = segmentedControlTilesOrder[tileSegmentedControl.selectedSegment]
@@ -50,7 +50,7 @@ extension ViewController : GameBoardViewDelegate {
 
 // MARK: Menu Items
 
-extension ViewController {
+extension MainViewController {
     @objc @IBAction func clearToVoid(_ sender: Any) {
         gameBoardView.board = Map(columns: gameBoardView.board.columns, rows: gameBoardView.board.rows, initialValue: .void)
         updateTextView()
@@ -153,3 +153,7 @@ extension ViewController {
         return super.responds(to: aSelector)
     }
 }
+
+// MARK: Key Events
+
+
