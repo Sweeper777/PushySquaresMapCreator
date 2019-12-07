@@ -381,6 +381,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.PushySquaresMapCreator;
 				PRODUCT_NAME = "Pushy Squares Map Creator";
 				SWIFT_VERSION = 5.0;
@@ -401,6 +402,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.PushySquaresMapCreator;
 				PRODUCT_NAME = "Pushy Squares Map Creator";
 				SWIFT_VERSION = 5.0;
