@@ -34,7 +34,7 @@
 		5A04112F239BBB3B004901BB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5A06000C238A857900C97D96 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		5A06000E238A995E00C97D96 /* GameBoardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewDelegate.swift; sourceTree = "<group>"; };
-		5A0816F523893A3200EFB833 /* PushySquaresMapCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushySquaresMapCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0816F523893A3200EFB833 /* Pushy Squares Map Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pushy Squares Map Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0816F823893A3200EFB833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A0816FC23893A3700EFB833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A0816FF23893A3700EFB833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		5A0816F623893A3200EFB833 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A0816F523893A3200EFB833 /* PushySquaresMapCreator.app */,
+				5A0816F523893A3200EFB833 /* Pushy Squares Map Creator.app */,
 				5A08170723893A3700EFB833 /* PushySquaresMapCreatorTests.xctest */,
 			);
 			name = Products;
@@ -130,7 +130,7 @@
 			);
 			name = PushySquaresMapCreator;
 			productName = PushySquaresMapCreator;
-			productReference = 5A0816F523893A3200EFB833 /* PushySquaresMapCreator.app */;
+			productReference = 5A0816F523893A3200EFB833 /* Pushy Squares Map Creator.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5A08170623893A3700EFB833 /* PushySquaresMapCreatorTests */ = {
@@ -382,7 +382,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.PushySquaresMapCreator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pushy Squares Map Creator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -402,7 +402,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.PushySquaresMapCreator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pushy Squares Map Creator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
