@@ -154,6 +154,14 @@ extension MainViewController {
     }
 }
 
-// MARK: Key Events
+// MARK: Shortcut keys for tiles
 
+extension MainViewController {
+    @IBAction @objc func didSelectTile(_ sender: NSMenuItem) {
+        let index = sender.menu!.items.firstIndex(of: sender)!
+        tileSegmentedControl.selectedSegment = index
+        sender.menu!.items.forEach { $0.state = .off }
+        sender.state = .on
+    }
+}
 
