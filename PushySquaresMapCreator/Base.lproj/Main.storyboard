@@ -302,6 +302,58 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Tile" id="BYQ-w7-RL5">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Tile" id="oCg-Ex-6cS">
+                                    <items>
+                                        <menuItem title="Void" keyEquivalent="1" id="gcM-Sf-xqs">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="Jlv-id-DTE"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Empty" state="on" keyEquivalent="2" id="kz7-qG-6Qv">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="VIO-YI-sfP"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Wall" keyEquivalent="3" id="sIQ-Ra-8Ki">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="JoH-7w-06r"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Grey" keyEquivalent="4" id="ddh-DN-5a2">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="0Ee-NH-aFj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Slippery" keyEquivalent="5" id="Ucl-N1-FDU">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="hvZ-bU-IcV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Spawn 1" keyEquivalent="6" id="TVi-Y3-8SO">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="neZ-Qr-JTE"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Spawn 2" keyEquivalent="7" id="cIG-9U-bkj">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="eOD-0H-ZjG"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Spawn 3" keyEquivalent="8" id="9qB-rY-tis">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="r78-fu-geH"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Spawn 4" keyEquivalent="9" id="Lfd-F7-glc">
+                                            <connections>
+                                                <action selector="didSelectTile:" target="Ady-hI-5gd" id="kK4-M5-ecv"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
@@ -443,7 +495,7 @@ O+++OO+++O
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39.5" y="770.5"/>
+            <point key="canvasLocation" x="76" y="771"/>
         </scene>
     </scenes>
     <resources>
