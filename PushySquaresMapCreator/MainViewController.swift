@@ -81,6 +81,7 @@ extension MainViewController {
         let inputTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
         inputTextField.placeholderString = "10"
         a.accessoryView = inputTextField
+        a.window.initialFirstResponder = inputTextField
 
         a.beginSheetModal(for: view.window!) { [weak self] modalResponse in
             if modalResponse == .alertFirstButtonReturn {
