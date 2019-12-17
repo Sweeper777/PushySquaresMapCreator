@@ -60,6 +60,17 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Map" id="bib-Uj-vzu">
                                     <items>
+                                        <menuItem title="Open..." keyEquivalent="o" id="Miy-bS-1Jp">
+                                            <connections>
+                                                <action selector="openMap:" target="Ady-hI-5gd" id="0Rh-Aq-SdL"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save..." keyEquivalent="s" id="4i8-wN-oi1">
+                                            <connections>
+                                                <action selector="saveAsMap:" target="Ady-hI-5gd" id="h0E-Ay-WA7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="emA-GE-bEp"/>
                                         <menuItem title="New Map with Size..." keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
                                                 <action selector="newBlankMap:" target="Ady-hI-5gd" id="u1E-ac-4C0"/>
@@ -75,16 +86,9 @@
                                                 <action selector="clearToEmpty:" target="Ady-hI-5gd" id="HtU-DU-nOr"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="emA-GE-bEp"/>
-                                        <menuItem title="Open..." keyEquivalent="o" id="Miy-bS-1Jp">
-                                            <connections>
-                                                <action selector="openMap:" target="Ady-hI-5gd" id="0Rh-Aq-SdL"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Save..." keyEquivalent="s" id="4i8-wN-oi1">
-                                            <connections>
-                                                <action selector="saveAsMap:" target="Ady-hI-5gd" id="h0E-Ay-WA7"/>
-                                            </connections>
+                                        <menuItem isSeparatorItem="YES" id="LUq-u0-lTg"/>
+                                        <menuItem title="Validate..." id="t10-8f-uKp">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -351,6 +355,27 @@
                                                 <action selector="didSelectTile:" target="Ady-hI-5gd" id="kK4-M5-ecv"/>
                                             </connections>
                                         </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Transform" id="ukb-dd-a0m">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Transform" id="Gzc-SW-3Bu">
+                                    <items>
+                                        <menuItem title="Reflect..." id="2Qx-Mq-qCD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openMap:" target="Ady-hI-5gd" id="q3a-Ss-cZE"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Rotate..." id="nE0-Ah-2GR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="saveAsMap:" target="Ady-hI-5gd" id="4tS-6K-ARv"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Enlarge" keyEquivalent="+" id="oBZ-TC-Qvx"/>
+                                        <menuItem title="Shrink" keyEquivalent="-" id="VFX-tT-wef"/>
                                     </items>
                                 </menu>
                             </menuItem>
