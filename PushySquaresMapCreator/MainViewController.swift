@@ -75,7 +75,7 @@ extension MainViewController {
     @objc @IBAction func newBlankMap(_ sender: Any) {
         let a = NSAlert()
         a.messageText = "Please enter the size of the new map:"
-        a.addButton(withTitle: "Save")
+        a.addButton(withTitle: "Create")
         a.addButton(withTitle: "Cancel")
 
         let inputTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
