@@ -516,11 +516,91 @@ O+++OO+++O
                         <outlet property="gameBoardTextView" destination="gFg-Dx-Sb5" id="eoK-Nh-rfg"/>
                         <outlet property="gameBoardView" destination="sQy-dj-qDK" id="k6e-Vz-kOY"/>
                         <outlet property="tileSegmentedControl" destination="ZHZ-mZ-vkX" id="cgb-xP-izN"/>
+                        <segue destination="QzT-8c-SFR" kind="modal" id="icc-ck-WZU"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76" y="771"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qx7-oT-YFr">
+            <objects>
+                <viewController id="QzT-8c-SFR" sceneMemberID="viewController">
+                    <view key="view" id="oG5-Hf-kk6">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="419"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlZ-2V-SyJ">
+                                <rect key="frame" x="134" y="375" width="168" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Left Half" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hPH-n3-zbz" id="xRh-LY-Awg">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="hhb-0e-ClK">
+                                        <items>
+                                            <menuItem title="Left Half" id="hPH-n3-zbz"/>
+                                            <menuItem title="Right Half" id="Vxn-r6-Pf9"/>
+                                            <menuItem title="Top Half" id="qeS-Xr-JQD"/>
+                                            <menuItem title="Bottom Half" id="QFv-rP-fzu"/>
+                                            <menuItem title="Top Left Quarter" id="FQv-SF-XPo"/>
+                                            <menuItem title="Top Right Quarter" id="qDf-yN-rDR"/>
+                                            <menuItem title="Bottom Left Quarter" id="c3Q-Qu-Y63"/>
+                                            <menuItem title="Bottom Right Quarter" id="yKM-Cq-30r"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5H-dp-y0N">
+                                <rect key="frame" x="151" y="345" width="52" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Preview" id="wmi-zj-ajn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="slA-Cf-pzq" customClass="GameBoardView" customModule="Pushy_Squares_Map_Creator" customModuleProvider="target">
+                                <rect key="frame" x="30" y="43" width="294" height="294"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7h-n7-M1R">
+                                <rect key="frame" x="282" y="4" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SlF-Le-TRc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="voc-yS-KXS">
+                                <rect key="frame" x="200" y="4" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qgo-PH-NPo">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgm-pF-wJu">
+                                <rect key="frame" x="54" y="383" width="76" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Map Region" id="vYf-rc-H0z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="8fg-VY-XZC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="771"/>
         </scene>
     </scenes>
     <resources>
