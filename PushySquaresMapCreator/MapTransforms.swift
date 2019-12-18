@@ -33,3 +33,24 @@ extension Array2D where T == Tile {
         return newMap
     }
 }
+
+// MARK: Slice and Replace
+extension Array2D where T == Tile {
+    subscript(x1: Int, y1: Int, x2: Int, y2: Int) -> Map {
+        get {
+            var newMap = Map(columns: x2 - x1 + 1, rows: y2 - y1 + 1, initialValue: .void)
+            for x in x1...x2 {
+                for y in y1...y2 {
+                    newMap[x - x1, y - y1] = self[x, y]
+                }
+            }
+            return newMap
+        }
+    }
+    
+    subscript(p1: Position, p2: Position) -> Map {
+        get {
+            return self[p1.x, p1.y, p2.x, p2.y]
+        }
+    }
+}
