@@ -374,8 +374,16 @@
                                                 <action selector="saveAsMap:" target="Ady-hI-5gd" id="4tS-6K-ARv"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Enlarge" keyEquivalent="+" id="oBZ-TC-Qvx"/>
-                                        <menuItem title="Shrink" keyEquivalent="-" id="VFX-tT-wef"/>
+                                        <menuItem title="Enlarge" keyEquivalent="+" id="oBZ-TC-Qvx">
+                                            <connections>
+                                                <action selector="enlargeMap:" target="Ady-hI-5gd" id="ghC-Uq-W6N"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Trim" keyEquivalent="-" id="VFX-tT-wef">
+                                            <connections>
+                                                <action selector="trimMap:" target="Ady-hI-5gd" id="5fA-NO-mNL"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -516,7 +524,8 @@ O+++OO+++O
                         <outlet property="gameBoardTextView" destination="gFg-Dx-Sb5" id="eoK-Nh-rfg"/>
                         <outlet property="gameBoardView" destination="sQy-dj-qDK" id="k6e-Vz-kOY"/>
                         <outlet property="tileSegmentedControl" destination="ZHZ-mZ-vkX" id="cgb-xP-izN"/>
-                        <segue destination="QzT-8c-SFR" kind="modal" id="icc-ck-WZU"/>
+                        <segue destination="QzT-8c-SFR" kind="modal" identifier="showReflect" id="icc-ck-WZU"/>
+                        <segue destination="QzT-8c-SFR" kind="modal" identifier="showRotate" id="uzT-uT-hdx"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -600,7 +609,7 @@ Gw
                 </viewController>
                 <customObject id="8fg-VY-XZC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="771"/>
+            <point key="canvasLocation" x="697" y="875"/>
         </scene>
     </scenes>
     <resources>
@@ -614,4 +623,7 @@ Gw
         <image name="wall" width="19" height="19"/>
         <image name="wet-icon" width="19" height="19"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uzT-uT-hdx"/>
+    </inferredMetricsTieBreakers>
 </document>
