@@ -10,3 +10,17 @@ extension Array2D where T == Tile {
     var midYTop: Int { rows / 2 - 1 }
     var midYBottom: Int { rows % 2 == 0 ? rows / 2 : rows / 2 + 1 }
 }
+
+// MARK: Enlarge and Trim
+extension Array2D where T == Tile {
+    func enlarged(by n: Int = 1) -> Map {
+        var newMap = Map(columns: self.columns + 2, rows: self.rows + 2, initialValue: .void)
+        for x in 1..<(newMap.columns - 1) {
+            for y in 1..<(newMap.rows - 1) {
+                newMap[x, y] = self[x - 1, y - 1]
+            }
+        }
+        return newMap
+    }
+    
+}
