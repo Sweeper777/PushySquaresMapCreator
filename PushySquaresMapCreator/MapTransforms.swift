@@ -23,4 +23,13 @@ extension Array2D where T == Tile {
         return newMap
     }
     
+    func trimmed(by n: Int = 1) -> Map {
+        var newMap = Map(columns: self.columns - 2, rows: self.rows - 2, initialValue: .void)
+        for x in 0..<newMap.columns {
+            for y in 0..<newMap.rows {
+                newMap[x, y] = self[x + 1, y + 1]
+            }
+        }
+        return newMap
+    }
 }
