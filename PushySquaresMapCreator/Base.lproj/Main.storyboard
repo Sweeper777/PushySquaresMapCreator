@@ -365,13 +365,13 @@
                                         <menuItem title="Reflect..." id="2Qx-Mq-qCD">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="openMap:" target="Ady-hI-5gd" id="q3a-Ss-cZE"/>
+                                                <action selector="reflectMap:" target="Ady-hI-5gd" id="Wde-iO-S1N"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Rotate..." id="nE0-Ah-2GR">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="saveAsMap:" target="Ady-hI-5gd" id="4tS-6K-ARv"/>
+                                                <action selector="rotateMap:" target="Ady-hI-5gd" id="SrW-RO-e7f"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enlarge" keyEquivalent="+" id="oBZ-TC-Qvx">
@@ -532,10 +532,10 @@ O+++OO+++O
             </objects>
             <point key="canvasLocation" x="76" y="771"/>
         </scene>
-        <!--View Controller-->
+        <!--Transforms View Controller-->
         <scene sceneID="Qx7-oT-YFr">
             <objects>
-                <viewController id="QzT-8c-SFR" sceneMemberID="viewController">
+                <viewController id="QzT-8c-SFR" customClass="TransformsViewController" customModule="Pushy_Squares_Map_Creator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oG5-Hf-kk6">
                         <rect key="frame" x="0.0" y="0.0" width="355" height="419"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -583,6 +583,9 @@ O+++OO+++O
 DQ
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="ok:" target="QzT-8c-SFR" id="EUn-RW-ejQ"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="voc-yS-KXS">
                                 <rect key="frame" x="200" y="4" width="82" height="32"/>
@@ -594,6 +597,9 @@ DQ
 Gw
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="cancel:" target="QzT-8c-SFR" id="aKb-JO-e2h"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgm-pF-wJu">
                                 <rect key="frame" x="54" y="383" width="76" height="16"/>
@@ -606,6 +612,10 @@ Gw
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="preview" destination="slA-Cf-pzq" id="1rC-1n-IxX"/>
+                        <outlet property="regionPopup" destination="vlZ-2V-SyJ" id="Poa-ek-Pnz"/>
+                    </connections>
                 </viewController>
                 <customObject id="8fg-VY-XZC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
