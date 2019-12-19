@@ -64,3 +64,17 @@ extension Array2D where T == Tile {
         }
     }
 }
+
+// MARK: Reflect and Rotate Whole Map
+extension Array2D where T == Tile {
+    func reflectedWholeMapHorizontally() -> Map {
+        var newMap = Map(columns: self.columns, rows: self.rows, initialValue: .void)
+        self.enumerateTiles(where: {_ in true}) { (x, y, tile) in
+            let newX = -x + newMap.columns - 1
+            let newY = y
+            newMap[newX, newY] = tile
+        }
+        return newMap
+    }
+    
+}
