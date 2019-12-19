@@ -87,4 +87,14 @@ extension Array2D where T == Tile {
         return newMap
     }
     
+    func rotatedWholeMap90DegreesAnticlockwise() -> Map {
+        var newMap = Map(columns: self.columns, rows: self.rows, initialValue: .void)
+        self.enumerateTiles(where: {_ in true}) { (x, y, tile) in
+            let newX = y
+            let newY = -x + newMap.rows - 1
+            newMap[newX, newY] = tile
+        }
+        return newMap
+    }
+    
 }
