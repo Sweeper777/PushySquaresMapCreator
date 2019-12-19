@@ -53,4 +53,14 @@ extension Array2D where T == Tile {
             return self[p1.x, p1.y, p2.x, p2.y]
         }
     }
+    
+    mutating func replace(startingFromX x: Int, y: Int, withMap map: Map) {
+        let replacedWidth = Swift.min(map.columns, self.columns - x)
+        let replacedHeight = Swift.min(map.rows, self.rows - y)
+        for a in 0..<replacedWidth {
+            for b in 0..<replacedHeight {
+                self[x + a, y + b] = map[a, b]
+            }
+        }
+    }
 }
