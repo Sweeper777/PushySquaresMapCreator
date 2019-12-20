@@ -145,6 +145,11 @@ extension MainViewController {
         }
     }
     
+    @objc @IBAction func enlargeMap(_ sender: Any) {
+        gameBoardView.board = gameBoardView.board.enlarged()
+        updateTextView()
+    }
+    
     override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
