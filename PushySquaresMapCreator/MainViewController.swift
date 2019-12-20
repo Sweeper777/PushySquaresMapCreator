@@ -159,6 +159,10 @@ extension MainViewController {
         performSegue(withIdentifier: "showReflect", sender: nil)
     }
     
+    @objc @IBAction func rotateMap(_ sender: Any) {
+        performSegue(withIdentifier: "showRotate", sender: nil)
+    }
+    
     override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
