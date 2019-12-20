@@ -175,6 +175,8 @@ extension MainViewController {
             let rightColumn = (0..<map.rows).map { Position(map.maxX, $0) }
             return [topRow, bottomRow, leftColumn, rightColumn].allSatisfy { $0.allSatisfy { map[$0] == .void } }
         } else if aSelector == #selector(reflectMap) {
+            guard let map = gameBoardView.board else { return false }
+            return map.columns >= 2 && map.rows >= 2
         } else if aSelector == #selector(rotateMap) {
         }
         
