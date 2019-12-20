@@ -155,6 +155,10 @@ extension MainViewController {
         updateTextView()
     }
     
+    @objc @IBAction func reflectMap(_ sender: Any) {
+        performSegue(withIdentifier: "showReflect", sender: nil)
+    }
+    
     override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
