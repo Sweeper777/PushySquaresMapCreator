@@ -150,6 +150,11 @@ extension MainViewController {
         updateTextView()
     }
     
+    @objc @IBAction func trimMap(_ sender: Any) {
+        gameBoardView.board = gameBoardView.board.trimmed()
+        updateTextView()
+    }
+    
     override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
