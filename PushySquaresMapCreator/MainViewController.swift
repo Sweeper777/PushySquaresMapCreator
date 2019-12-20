@@ -178,6 +178,8 @@ extension MainViewController {
             guard let map = gameBoardView.board else { return false }
             return map.columns >= 2 && map.rows >= 2
         } else if aSelector == #selector(rotateMap) {
+            guard let map = gameBoardView.board else { return false }
+            return map.columns >= 2 && map.rows >= 2 && map.rows == map.columns
         }
         
         return super.responds(to: aSelector)
