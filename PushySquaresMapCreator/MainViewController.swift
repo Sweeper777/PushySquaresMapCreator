@@ -167,6 +167,15 @@ extension MainViewController {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
             return map.columns > 2 && map.rows > 2
+        } else if aSelector == #selector(trimMap) {
+            guard let map = gameBoardView.board else { return false }
+            let topRow = (0..<map.columns).map { Position($0, 0) }
+            let bottomRow = (0..<map.columns).map { Position($0, map.maxY) }
+            let leftColumn = (0..<map.rows).map { Position(0, $0) }
+            let rightColumn = (0..<map.rows).map { Position(map.maxX, $0) }
+            return [topRow, bottomRow, leftColumn, rightColumn].allSatisfy { $0.allSatisfy { map[$0] == .void } }
+        } else if aSelector == #selector(reflectMap) {
+        } else if aSelector == #selector(rotateMap) {
         }
         
         return super.responds(to: aSelector)
