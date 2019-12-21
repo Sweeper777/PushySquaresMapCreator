@@ -14,6 +14,15 @@ extension Array2D where T == Tile {
     var midXRight: Int { columns % 2 == 0 ? columns / 2 : columns / 2 + 1 }
     var midYTop: Int { rows / 2 - 1 }
     var midYBottom: Int { rows % 2 == 0 ? rows / 2 : rows / 2 + 1 }
+    
+    func topLeft(ofRegion region: MapRegion) -> Position {
+        switch region {
+        case .topLeftQuarter, .leftHalf, .topHalf: return Position(0, 0)
+        case .topRightQuarter, .rightHalf: return Position(midXRight, 0)
+        case .bottomLeftQuarter, .bottomHalf: return Position(0, midYBottom)
+        case .bottomRightQuarter: return Position(midXRight, midYBottom)
+        }
+    }
 }
 
 // MARK: Enlarge and Trim
