@@ -83,6 +83,21 @@ extension Array2D where T == Tile {
     }
 }
 
+extension MapRegion {
+    func of(_ map: Map) -> Map {
+        switch self {
+        case .leftHalf: return map[0, 0, map.midXLeft, map.maxY]
+        case .rightHalf: return map[map.midXRight, 0, map.maxX, map.maxY]
+        case .topHalf: return map[0, 0, map.maxX, map.midYTop]
+        case .bottomHalf: return map[0, map.midYBottom, map.maxX, map.maxY]
+        case .topLeftQuarter: return map[0, 0, map.midXLeft, map.midYTop]
+        case .topRightQuarter: return map[map.midXRight, 0, map.maxX, map.midYTop]
+        case .bottomLeftQuarter: return map[0, map.midYBottom, map.midXLeft, map.maxY]
+        case .bottomRightQuarter: return map[map.midXRight, map.midYBottom, map.maxX, map.maxY]
+        }
+    }
+}
+
 // MARK: Reflect and Rotate Whole Map
 extension Array2D where T == Tile {
     func reflectedWholeMapHorizontally() -> Map {
