@@ -197,3 +197,10 @@ extension MainViewController {
     }
 }
 
+// MARK: Transforms VC Delegate
+extension MainViewController: TransformsViewControllerDelegate {
+    func didTransform(transformedMap: Map) {
+        gameBoardView.board = transformedMap
+        updateTextView()
+    }
+}
