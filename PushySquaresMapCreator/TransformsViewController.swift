@@ -9,3 +9,6 @@ class TransformsViewController: NSViewController {
     
 }
 
+protocol TransformsViewControllerDelegate : class {
+    func didTransform(transformedMap: Map)
+}
