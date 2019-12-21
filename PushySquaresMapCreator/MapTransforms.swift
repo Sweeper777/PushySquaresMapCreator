@@ -1,5 +1,10 @@
 import Foundation
 
+enum TransformType {
+    case reflect
+    case rotate
+}
+
 // MARK: Key Positions in Map
 extension Array2D where T == Tile {
     var maxX: Int { columns - 1 }
