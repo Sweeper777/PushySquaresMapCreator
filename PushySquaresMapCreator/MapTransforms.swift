@@ -77,6 +77,10 @@ extension Array2D where T == Tile {
             }
         }
     }
+    
+    mutating func replace(startingFrom position: Position, withMap map: Map) {
+        replace(startingFromX: position.x, y: position.y, withMap: map)
+    }
 }
 
 // MARK: Reflect and Rotate Whole Map
