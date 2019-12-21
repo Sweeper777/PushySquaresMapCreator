@@ -7,6 +7,7 @@ class TransformsViewController: NSViewController {
     var originalMap: Map!
     var transformedMap: Map!
     
+    weak var delegate: TransformsViewControllerDelegate?
 }
 
 protocol TransformsViewControllerDelegate : class {

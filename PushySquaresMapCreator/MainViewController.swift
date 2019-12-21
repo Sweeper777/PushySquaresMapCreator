@@ -184,6 +184,13 @@ extension MainViewController {
         
         return super.responds(to: aSelector)
     }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if let vc = segue.destinationController as? TransformsViewController {
+            vc.originalMap = gameBoardView.board
+            vc.delegate = self
+        }
+    }
 }
 
 // MARK: Shortcut keys for tiles
