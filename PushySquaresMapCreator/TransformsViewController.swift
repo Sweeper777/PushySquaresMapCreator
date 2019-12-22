@@ -9,6 +9,11 @@ class TransformsViewController: NSViewController {
     var transformType: TransformType!
     
     weak var delegate: TransformsViewControllerDelegate?
+    
+    var selectedRegion: MapRegion {
+        MapRegion(rawValue: regionPopup.indexOfSelectedItem)!
+    }
+    
 }
 
 protocol TransformsViewControllerDelegate : class {
