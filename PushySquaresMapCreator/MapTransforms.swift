@@ -141,4 +141,21 @@ extension Array2D where T == Tile {
     }
 }
 
+// MARK: Make Symmetries
+extension Array2D where T == Tile {
+    mutating func makeReflectionalSymmetry(withOriginalRegion region: MapRegion) {
+        let originalRegion = region.of(self)
+        let horizontallyReflectedMap = originalRegion.reflectedWholeMapHorizontally()
+        let verticallyReflectedMap = originalRegion.reflectedWholeMapVertically()
+        let twiceReflectedMap = verticallyReflectedMap.reflectedWholeMapHorizontally()
+        switch region {
+        case .leftHalf:
+            replace(startingFrom: topLeft(ofRegion: .rightHalf), withMap: horizontallyReflectedMap)
+        case .rightHalf:
+            replace(startingFrom: topLeft(ofRegion: .leftHalf), withMap: horizontallyReflectedMap)
+        case .topHalf:
+            replace(startingFrom: topLeft(ofRegion: .bottomHalf), withMap: verticallyReflectedMap)
+        case .bottomHalf:
+            replace(startingFrom: topLeft(ofRegion: .topHalf), withMap: verticallyReflectedMap)
+    }
 }
