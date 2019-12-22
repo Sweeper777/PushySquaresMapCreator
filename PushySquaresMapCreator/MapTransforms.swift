@@ -175,4 +175,21 @@ extension Array2D where T == Tile {
             replace(startingFrom: topLeft(ofRegion: .topLeftQuarter), withMap: twiceReflectedMap)
         }
     }
+    
+    mutating func makeRotationalSymmetry(withOriginalRegion region: MapRegion) {
+        let originalRegion = region.of(self)
+        let onceRotatedMap = originalRegion.rotatedWholeMap90DegreesAnticlockwise()
+        let twiceRotatedMap = originalRegion.rotatedWholeMap180Degrees()
+        let thriceRotatedMap = twiceRotatedMap.rotatedWholeMap90DegreesAnticlockwise()
+        switch region {
+        case .leftHalf:
+            replace(startingFrom: topLeft(ofRegion: .rightHalf), withMap: twiceRotatedMap)
+        case .rightHalf:
+            replace(startingFrom: topLeft(ofRegion: .leftHalf), withMap: twiceRotatedMap)
+        case .topHalf:
+            replace(startingFrom: topLeft(ofRegion: .bottomHalf), withMap: twiceRotatedMap)
+        case .bottomHalf:
+            replace(startingFrom: topLeft(ofRegion: .topHalf), withMap: twiceRotatedMap)
+        }
+    }
 }
