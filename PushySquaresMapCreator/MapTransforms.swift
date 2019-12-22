@@ -190,6 +190,22 @@ extension Array2D where T == Tile {
             replace(startingFrom: topLeft(ofRegion: .bottomHalf), withMap: twiceRotatedMap)
         case .bottomHalf:
             replace(startingFrom: topLeft(ofRegion: .topHalf), withMap: twiceRotatedMap)
+        case .topLeftQuarter:
+            replace(startingFrom: topLeft(ofRegion: .topRightQuarter), withMap: thriceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .bottomLeftQuarter), withMap: onceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .bottomRightQuarter), withMap: twiceRotatedMap)
+        case .topRightQuarter:
+            replace(startingFrom: topLeft(ofRegion: .topLeftQuarter), withMap: onceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .bottomRightQuarter), withMap: thriceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .bottomLeftQuarter), withMap: twiceRotatedMap)
+        case .bottomLeftQuarter:
+            replace(startingFrom: topLeft(ofRegion: .bottomRightQuarter), withMap: onceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .topLeftQuarter), withMap: thriceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .topRightQuarter), withMap: twiceRotatedMap)
+        case .bottomRightQuarter:
+            replace(startingFrom: topLeft(ofRegion: .bottomLeftQuarter), withMap: thriceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .topRightQuarter), withMap: onceRotatedMap)
+            replace(startingFrom: topLeft(ofRegion: .topLeftQuarter), withMap: twiceRotatedMap)
         }
     }
 }
