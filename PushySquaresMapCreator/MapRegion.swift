@@ -1,7 +1,7 @@
 import Foundation
 
-enum MapRegion {
-    case leftHalf
+enum MapRegion : Int {
+    case leftHalf = 0
     case rightHalf
     case topHalf
     case bottomHalf
