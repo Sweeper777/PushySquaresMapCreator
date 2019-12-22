@@ -189,6 +189,11 @@ extension MainViewController {
         if let vc = segue.destinationController as? TransformsViewController {
             vc.originalMap = gameBoardView.board
             vc.delegate = self
+            if segue.identifier == "showReflect" {
+                vc.transformType = .reflect
+            } else if segue.identifier == "showRotate" {
+                vc.transformType = .rotate
+            }
         }
     }
 }
