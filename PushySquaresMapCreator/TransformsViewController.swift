@@ -23,6 +23,17 @@ class TransformsViewController: NSViewController {
         dismiss(sender)
     }
     
+    
+    func transformMap() {
+        transformedMap = originalMap
+        switch transformType! {
+        case .reflect:
+            transformedMap.makeReflectionalSymmetry(withOriginalRegion: selectedRegion)
+        case .rotate:
+            transformedMap.makeRotationalSymmetry(withOriginalRegion: selectedRegion)
+        }
+        preview.board = transformedMap
+    }
 }
 
 protocol TransformsViewControllerDelegate : class {
