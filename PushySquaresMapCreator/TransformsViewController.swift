@@ -27,6 +27,9 @@ class TransformsViewController: NSViewController {
         dismiss(sender)
     }
     
+    @IBAction func popupDidChange(_ sender: Any) {
+        transformMap()
+    }
     
     func transformMap() {
         transformedMap = originalMap
