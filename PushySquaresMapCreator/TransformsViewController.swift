@@ -15,6 +15,13 @@ class TransformsViewController: NSViewController {
     }
     
     override func viewDidLoad() {
+        switch transformType! {
+        case .reflect:
+            title = "Form Reflectional Symmetry"
+        case .rotate:
+            title = "Form Rotational Symmetry"
+        }
+        
         transformMap()
     }
     
