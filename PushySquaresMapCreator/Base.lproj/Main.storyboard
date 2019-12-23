@@ -543,12 +543,12 @@ O+++OO+++O
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlZ-2V-SyJ">
                                 <rect key="frame" x="134" y="375" width="168" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Left Half" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hPH-n3-zbz" id="xRh-LY-Awg">
+                                <popUpButtonCell key="cell" type="push" title="Left Half" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hPH-n3-zbz" id="xRh-LY-Awg">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="hhb-0e-ClK">
                                         <items>
-                                            <menuItem title="Left Half" id="hPH-n3-zbz"/>
+                                            <menuItem title="Left Half" state="on" id="hPH-n3-zbz"/>
                                             <menuItem title="Right Half" id="Vxn-r6-Pf9"/>
                                             <menuItem title="Top Half" id="qeS-Xr-JQD"/>
                                             <menuItem title="Bottom Half" id="QFv-rP-fzu"/>
@@ -559,6 +559,9 @@ O+++OO+++O
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupDidChange:" target="QzT-8c-SFR" id="ulh-5D-Aen"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5H-dp-y0N">
                                 <rect key="frame" x="151" y="345" width="52" height="16"/>
