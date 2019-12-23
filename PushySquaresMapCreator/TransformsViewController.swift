@@ -14,6 +14,10 @@ class TransformsViewController: NSViewController {
         MapRegion(rawValue: regionPopup.indexOfSelectedItem)!
     }
     
+    override func viewDidLoad() {
+        transformMap()
+    }
+    
     @IBAction func ok(_ sender: Any) {
         delegate?.didTransform(transformedMap: transformedMap)
         dismiss(sender)
