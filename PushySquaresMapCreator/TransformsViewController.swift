@@ -22,6 +22,7 @@ class TransformsViewController: NSViewController {
             title = "Form Rotational Symmetry"
         }
         
+        preferredContentSize = CGSize(width: 355, height: 419)
         transformMap()
     }
     
