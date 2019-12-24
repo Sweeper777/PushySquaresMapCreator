@@ -121,7 +121,7 @@ extension Array2D where T == Tile {
     }
     
     func rotatedWholeMap90DegreesAnticlockwise() -> Map {
-        var newMap = Map(columns: self.columns, rows: self.rows, initialValue: .void)
+        var newMap = Map(columns: self.rows, rows: self.columns, initialValue: .void)
         self.enumerateTiles(where: {_ in true}) { (x, y, tile) in
             let newX = y
             let newY = -x + newMap.rows - 1
