@@ -14,6 +14,11 @@ class GameBoardView : NSView {
         }
     }
     
+    var showVerticalRule: Bool {
+        didSet {
+            setNeedsDisplay(self.bounds)
+        }
+    }
     let borderSize: CGFloat = 8
     
     fileprivate func drawVoids() {
