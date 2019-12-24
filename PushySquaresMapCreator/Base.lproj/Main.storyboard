@@ -387,6 +387,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="View" id="dKu-sn-AUh">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="fAc-8W-5yJ">
+                                    <items>
+                                        <menuItem title="Horizontal Rule" id="EOa-dv-7j3">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Vertical Rule" id="nph-Pf-9YR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
