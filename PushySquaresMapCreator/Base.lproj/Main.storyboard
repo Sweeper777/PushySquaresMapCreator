@@ -362,13 +362,13 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Transform" id="Gzc-SW-3Bu">
                                     <items>
-                                        <menuItem title="Reflect..." id="2Qx-Mq-qCD">
+                                        <menuItem title="Make Reflectional Symmetry..." id="2Qx-Mq-qCD">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="reflectMap:" target="Ady-hI-5gd" id="Wde-iO-S1N"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Rotate..." id="nE0-Ah-2GR">
+                                        <menuItem title="Make Rotational Symmetry..." id="nE0-Ah-2GR">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="rotateMap:" target="Ady-hI-5gd" id="SrW-RO-e7f"/>
