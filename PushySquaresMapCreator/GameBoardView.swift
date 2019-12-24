@@ -16,16 +16,16 @@ class GameBoardView : NSView {
     
     let borderSize: CGFloat = 8
     
-    override func draw(_ dirtyRect: NSRect) {
-        guard board != nil else { return }
-        
+    fileprivate func drawVoids() {
         board.enumerateTiles(where: { $0 == .void}) { x, y, _ in
             let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
             NSColor.textColor.setStroke()
             path.lineWidth = 0.5
             path.stroke()
         }
-        
+    }
+    
+    fileprivate func drawNonVoidOutlines() {
         board.enumerateTiles(where: { $0 != .void}) { x, y, _ in
             let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
             NSColor.black.setStroke()
@@ -34,7 +34,9 @@ class GameBoardView : NSView {
             path.fill()
             path.stroke()
         }
-        
+    }
+    
+    fileprivate func drawSpawns() {
         board.enumerateTiles(where: [Tile.spawn1, .spawn2, .spawn3, .spawn4].contains) { x, y, tile in
             if tile == .spawn1 {
                 NSColor.red.setStroke()
@@ -49,7 +51,9 @@ class GameBoardView : NSView {
             path.lineWidth = strokeWidth
             path.stroke()
         }
-        
+    }
+    
+    fileprivate func drawSpecialSquares() {
         board.enumerateTiles(where: { _ in true }) { x, y, tile in
             if tile == .wall {
                 drawInnerSquare(at: Position(x, y), color: .white)
@@ -61,6 +65,15 @@ class GameBoardView : NSView {
                     size: CGSize(width: squareLength, height: squareLength)))
             }
         }
+    }
+    
+    override func draw(_ dirtyRect: NSRect) {
+        guard board != nil else { return }
+        
+        drawVoids()
+        drawNonVoidOutlines()
+        drawSpawns()
+        drawSpecialSquares()
     }
     
     func drawInnerSquare(at position: Position, color: NSColor) {
