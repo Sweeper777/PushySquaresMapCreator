@@ -28,6 +28,8 @@ class GameBoardView : NSView {
     
     let borderSize: CGFloat = 8
     
+    // MARK: Drawing methods
+    
     fileprivate func drawVoids() {
         board.enumerateTiles(where: { $0 == .void}) { x, y, _ in
             let path = NSBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
@@ -87,6 +89,8 @@ class GameBoardView : NSView {
         drawSpawns()
         drawSpecialSquares()
     }
+    
+    // MARK: Drawing helpers
     
     func drawInnerSquare(at position: Position, color: NSColor) {
         let fillPathRect = CGRect(origin: innerSquarePoint(for: position), size: CGSize(width: innerSquareLength, height: innerSquareLength))
