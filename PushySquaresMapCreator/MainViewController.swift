@@ -163,6 +163,14 @@ extension MainViewController {
         performSegue(withIdentifier: "showRotate", sender: nil)
     }
     
+    @objc @IBAction func showVerticalRule(_ sender: Any) {
+        gameBoardView.showVerticalRule.toggle()
+    }
+    
+    @objc @IBAction func showHorizontalRule(_ sender: Any) {
+        gameBoardView.showHorizontalRule.toggle()
+    }
+    
     override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
