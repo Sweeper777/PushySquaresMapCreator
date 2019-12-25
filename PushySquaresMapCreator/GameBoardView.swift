@@ -81,6 +81,20 @@ class GameBoardView : NSView {
         }
     }
     
+    fileprivate func drawVerticalRule() {
+        let rulePath = NSBezierPath()
+        let x = (point(for: Position(board.columns - 1, 0)).x +
+                    squareLength -
+                    point(for: Position(0, 0)).x) / 2
+        let startY = point(for: Position(0, 0)).y
+        let endY = point(for: Position(0, board.rows - 1)).y
+        rulePath.move(to: CGPoint(x: x, y: startY))
+        rulePath.line(to: CGPoint(x: x, y: endY))
+        rulePath.lineWidth = 1
+        NSColor.secondaryLabelColor.setStroke()
+        rulePath.stroke()
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         guard board != nil else { return }
         
