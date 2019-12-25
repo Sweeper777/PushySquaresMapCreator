@@ -14,13 +14,13 @@ class GameBoardView : NSView {
         }
     }
     
-    var showVerticalRule: Bool {
+    var showVerticalRule: Bool = false {
         didSet {
             setNeedsDisplay(self.bounds)
         }
     }
     
-    var showHorizontalRule: Bool {
+    var showHorizontalRule: Bool = false {
         didSet {
             setNeedsDisplay(self.bounds)
         }
