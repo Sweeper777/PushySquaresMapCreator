@@ -393,9 +393,15 @@
                                     <items>
                                         <menuItem title="Horizontal Rule" id="EOa-dv-7j3">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showHorizontalRule:" target="Ady-hI-5gd" id="jc5-wP-geI"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Vertical Rule" id="nph-Pf-9YR">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showVerticalRule:" target="Ady-hI-5gd" id="dfb-5Y-P4F"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
