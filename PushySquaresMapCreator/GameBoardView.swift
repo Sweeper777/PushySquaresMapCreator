@@ -116,6 +116,13 @@ class GameBoardView : NSView {
         drawNonVoidOutlines()
         drawSpawns()
         drawSpecialSquares()
+        
+        if showVerticalRule {
+            drawVerticalRule()
+        }
+        if showHorizontalRule {
+            drawHorizontalRule()
+        }
     }
     
     // MARK: Drawing helpers
