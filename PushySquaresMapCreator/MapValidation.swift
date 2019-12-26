@@ -7,3 +7,8 @@ enum MapErrorKind {
     case walkableAtEdge
 }
 
+struct MapError {
+    var kind: MapErrorKind
+    var position: Position?
+}
+
