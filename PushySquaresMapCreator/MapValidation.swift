@@ -30,3 +30,24 @@ extension MapError : CustomStringConvertible {
         return positionDescription + kindDescription()
     }
 }
+
+extension Map {
+    
+    fileprivate func validateSpawns() -> [MapError] {
+        var errors = [MapError]()
+        var spawnCounts = [0, 0, 0, 0]
+        for (index, spawn) in [Tile.spawn1, .spawn2, .spawn3, .spawn4].enumerated() {
+            enumerateTiles(where: { $0 == spawn }) { (x, y, tile) in
+                spawnCounts[index] += 1
+                if spawnCounts[index] > 1 {
+                    errors.append(MapError(kind: .extraSpawn(index + 1), position: Position(x, y)))
+                }
+            }
+        }
+        for index in spawnCounts.indices where spawnCounts[index] == 0 {
+            errors.append(MapError(kind: .missingSpawn(index + 1), position: nil))
+        }
+        return errors
+    }
+    
+}
