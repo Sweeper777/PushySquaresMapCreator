@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A01D31723B4413600D4AC55 /* MapValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01D31623B4413600D4AC55 /* MapValidation.swift */; };
 		5A041130239BBB3B004901BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04112F239BBB3B004901BB /* MainViewController.swift */; };
 		5A06000D238A857900C97D96 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06000C238A857900C97D96 /* Map.swift */; };
 		5A06000F238A995E00C97D96 /* GameBoardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06000E238A995E00C97D96 /* GameBoardViewDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A01D31623B4413600D4AC55 /* MapValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapValidation.swift; sourceTree = "<group>"; };
 		5A04112F239BBB3B004901BB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5A06000C238A857900C97D96 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		5A06000E238A995E00C97D96 /* GameBoardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				5A06000C238A857900C97D96 /* Map.swift */,
 				5A4C46D423A9B518005272F7 /* MapRegion.swift */,
 				5A4C46D623A9BAC5005272F7 /* MapTransforms.swift */,
+				5A01D31623B4413600D4AC55 /* MapValidation.swift */,
 				5A08171C23893F1800EFB833 /* GameBoardView.swift */,
 				5A06000E238A995E00C97D96 /* GameBoardViewDelegate.swift */,
 				5A08171E238941B600EFB833 /* UsefulExtensions.swift */,
@@ -225,6 +228,7 @@
 				5A08171D23893F1800EFB833 /* GameBoardView.swift in Sources */,
 				5A4C46D523A9B518005272F7 /* MapRegion.swift in Sources */,
 				5A4C46D923A9DBE1005272F7 /* TransformsViewController.swift in Sources */,
+				5A01D31723B4413600D4AC55 /* MapValidation.swift in Sources */,
 				5A08171923893CC800EFB833 /* Array2D.swift in Sources */,
 				5A06000D238A857900C97D96 /* Map.swift in Sources */,
 				5A08171F238941B600EFB833 /* UsefulExtensions.swift in Sources */,
