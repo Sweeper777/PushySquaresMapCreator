@@ -87,7 +87,7 @@ class GameBoardView : NSView {
                     squareLength -
                     point(for: Position(0, 0)).x) / 2
         let startY = point(for: Position(0, 0)).y
-        let endY = point(for: Position(0, board.rows - 1)).y
+        let endY = point(for: Position(0, board.rows)).y
         rulePath.move(to: CGPoint(x: x, y: startY))
         rulePath.line(to: CGPoint(x: x, y: endY))
         rulePath.lineWidth = 1
@@ -101,7 +101,7 @@ class GameBoardView : NSView {
                     squareLength -
                     point(for: Position(0, 0)).y) / 2
         let startX = point(for: Position(0, 0)).x
-        let endX = point(for: Position(board.columns - 1, 0)).x
+        let endX = point(for: Position(board.columns, 0)).x
         rulePath.move(to: CGPoint(x: startX, y: y))
         rulePath.line(to: CGPoint(x: endX, y: y))
         rulePath.lineWidth = 1
