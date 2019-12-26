@@ -50,4 +50,14 @@ extension Map {
         return errors
     }
     
+    fileprivate func validateWalkableAtEdge() -> [MapError] {
+        var errors = [MapError]()
+        enumerateTiles(where: { $0 != .wall && $0 != .empty }) { (x, y, tile) in
+            if x == 0 || x == columns - 1 || y == 0 || y == rows - 1 {
+                errors.append(MapError(kind: .walkableAtEdge, position: Position(x, y)))
+            }
+        }
+        return errors
+    }
+    
 }
