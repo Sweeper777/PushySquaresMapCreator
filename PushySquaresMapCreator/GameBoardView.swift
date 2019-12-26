@@ -90,7 +90,7 @@ class GameBoardView : NSView {
         let endY = point(for: Position(0, board.rows)).y
         rulePath.move(to: CGPoint(x: x, y: startY))
         rulePath.line(to: CGPoint(x: x, y: endY))
-        rulePath.lineWidth = 1
+        rulePath.lineWidth = strokeWidth * 2
         NSColor.secondaryLabelColor.setStroke()
         rulePath.stroke()
     }
@@ -104,7 +104,7 @@ class GameBoardView : NSView {
         let endX = point(for: Position(board.columns, 0)).x
         rulePath.move(to: CGPoint(x: startX, y: y))
         rulePath.line(to: CGPoint(x: endX, y: y))
-        rulePath.lineWidth = 1
+        rulePath.lineWidth = strokeWidth * 2
         NSColor.secondaryLabelColor.setStroke()
         rulePath.stroke()
     }
