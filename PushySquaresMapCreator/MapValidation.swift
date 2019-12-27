@@ -60,4 +60,24 @@ extension Map {
         return errors
     }
     
+    fileprivate func validateSpawnTooCloseToWall() -> [MapError] {
+        var errors = [MapError]()
+        for (index, spawn) in [Tile.spawn1, .spawn2, .spawn3, .spawn4].enumerated() {
+            enumerateTiles(where: { $0 == spawn }) { (x, y, tile) in
+                let pos = Position(x, y)
+                let top = pos.above()
+                let left = pos.left()
+                let right = pos.right()
+                let bottom = pos.below()
+                let surroundingPositions = [
+                    top, left, bottom, right, top.left(), top.right(), bottom.left(), bottom.right()
+                ]
+                let surroundingTiles = surroundingPositions.map { self[safe: $0] }
+                if surroundingTiles.contains(.wall) {
+                    errors.append(MapError(kind: .spawnTooCloseToWall(index + 1), position: pos))
+                }
+            }
+        }
+        return errors
+    }
 }
