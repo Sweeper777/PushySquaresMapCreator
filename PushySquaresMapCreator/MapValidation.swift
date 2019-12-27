@@ -32,6 +32,13 @@ extension MapError : CustomStringConvertible {
 }
 
 extension Map {
+    func validate() -> [MapError] {
+        var errors = [MapError]()
+        errors.append(contentsOf: validateSpawns())
+        errors.append(contentsOf: validateWalkableAtEdge())
+        errors.append(contentsOf: validateSpawnTooCloseToWall())
+        return errors
+    }
     
     fileprivate func validateSpawns() -> [MapError] {
         var errors = [MapError]()
