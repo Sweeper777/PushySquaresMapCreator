@@ -545,7 +545,8 @@ O+++OO+++O
                         <outlet property="tileSegmentedControl" destination="ZHZ-mZ-vkX" id="cgb-xP-izN"/>
                         <segue destination="QzT-8c-SFR" kind="modal" identifier="showReflect" id="icc-ck-WZU"/>
                         <segue destination="QzT-8c-SFR" kind="modal" identifier="showRotate" id="uzT-uT-hdx"/>
-                        <segue destination="fJv-e2-gnX" kind="sheet" id="uJZ-af-qQc"/>
+                        <segue destination="fJv-e2-gnX" kind="sheet" identifier="showErrors" id="uJZ-af-qQc"/>
+                        <segue destination="dD8-6i-5z6" kind="sheet" identifier="showValid" id="G6b-dv-FgV"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -745,9 +746,50 @@ Gw
             </objects>
             <point key="canvasLocation" x="697" y="875"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="rPT-Y2-Nuc">
+            <objects>
+                <viewController id="dD8-6i-5z6" sceneMemberID="viewController">
+                    <view key="view" id="o0e-0d-rOU">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-w0-F1d">
+                                <rect key="frame" x="377" y="3" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="onH-0B-mJS">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ft-4I-CJO">
+                                <rect key="frame" x="146" y="121" width="159" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="checkmark" id="1hW-Xa-ndw"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Rc-nS-uX5">
+                                <rect key="frame" x="156" y="65" width="139" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Valid Map!" id="nfX-v0-tQ3">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="Gkh-mp-kQN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="1293"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NSCaution" width="32" height="32"/>
+        <image name="checkmark" width="256" height="256"/>
         <image name="empty" width="19" height="19"/>
         <image name="grey" width="19" height="19"/>
         <image name="spawn1" width="19" height="19"/>
