@@ -171,6 +171,15 @@ extension MainViewController {
         gameBoardView.showHorizontalRule.toggle()
     }
     
+    @objc @IBAction func validateMap(_ sender: Any) {
+        let errors = gameBoardView.board.validate()
+        if errors.isEmpty {
+            performSegue(withIdentifier: "showValid", sender: nil)
+        } else {
+            performSegue(withIdentifier: "showErrors", sender: errors)
+        }
+    }
+    
     override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(clearToEmpty) {
             guard let map = gameBoardView.board else { return false }
