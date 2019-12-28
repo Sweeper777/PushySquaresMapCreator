@@ -89,6 +89,9 @@
                                         <menuItem isSeparatorItem="YES" id="LUq-u0-lTg"/>
                                         <menuItem title="Validate..." id="t10-8f-uKp">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="validateMap:" target="Ady-hI-5gd" id="ZPE-A5-GtH"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -571,6 +574,9 @@ O+++OO+++O
 DQ
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="fJv-e2-gnX" id="Tga-j3-8N5"/>
+                                </connections>
                             </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zre-6l-0LQ">
                                 <rect key="frame" x="20" y="43" width="410" height="213"/>
@@ -768,7 +774,7 @@ DQ
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="ok:" target="dD8-6i-5z6" id="ICN-eU-Z5r"/>
+                                    <action selector="dismissController:" target="dD8-6i-5z6" id="1eD-1R-6Bt"/>
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ft-4I-CJO">
