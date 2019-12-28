@@ -553,10 +553,10 @@ O+++OO+++O
             </objects>
             <point key="canvasLocation" x="76" y="771"/>
         </scene>
-        <!--View Controller-->
+        <!--Errors View Controller-->
         <scene sceneID="pfm-u9-KO9">
             <objects>
-                <viewController id="fJv-e2-gnX" sceneMemberID="viewController">
+                <viewController id="fJv-e2-gnX" customClass="ErrorsViewController" customModule="Pushy_Squares_Map_Creator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="HWL-3M-q5P">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -649,6 +649,9 @@ DQ
                             </imageView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="bYB-6m-pdh" id="y3i-wH-7mS"/>
+                    </connections>
                 </viewController>
                 <customObject id="PII-BP-W8V" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -746,10 +749,10 @@ Gw
             </objects>
             <point key="canvasLocation" x="697" y="875"/>
         </scene>
-        <!--View Controller-->
+        <!--Valid Map View Controller-->
         <scene sceneID="rPT-Y2-Nuc">
             <objects>
-                <viewController id="dD8-6i-5z6" sceneMemberID="viewController">
+                <viewController id="dD8-6i-5z6" customClass="ValidMapViewController" customModule="Pushy_Squares_Map_Creator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="o0e-0d-rOU">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -764,6 +767,9 @@ Gw
 DQ
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="ok:" target="dD8-6i-5z6" id="ICN-eU-Z5r"/>
+                                </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ft-4I-CJO">
                                 <rect key="frame" x="146" y="121" width="159" height="159"/>
