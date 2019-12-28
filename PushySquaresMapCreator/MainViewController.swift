@@ -211,6 +211,9 @@ extension MainViewController {
             } else if segue.identifier == "showRotate" {
                 vc.transformType = .rotate
             }
+        } else if let vc = segue.destinationController as? ErrorsViewController,
+                let errors = sender as? [MapError] {
+            vc.errors = errors
         }
     }
 }
